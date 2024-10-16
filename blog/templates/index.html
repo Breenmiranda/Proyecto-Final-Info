@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+<div class="container mt-5">
+    <div class="jumbotron text-center">
+        <h1>¡Bienvenido a Nuestro Blog!</h1>
+        <p>Descubre las últimas noticias y artículos en diversas categorías.</p>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h2>Últimos Posts</h2>
+            <ul>
+                {% for post in posts %}
+                    <li>
+                        <a href="{% url 'apps.posts:post_individual' post.id %}">
+                            {{ post.titulo }}
+                        </a> 
+                        - Publicado el {{ post.fecha_publicacion|date:"d M, Y" }}
+                    </li>
+                {% empty %}
+                    <li>No hay posts disponibles.</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="col-md-4">
+            <h2>Categorías</h2>
+            <ul>
+                {% for categoria in categorias %}
+                    <li>
+                        <a href="{% url 'apps.posts:posts_por_categoria' categoria.id %}">
+                            {{ categoria.nombre }}
+                        </a>
+                    </li>
+                {% empty %}
+                    <li>No hay categorías disponibles.</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
