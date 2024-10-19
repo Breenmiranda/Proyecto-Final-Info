@@ -1,43 +1,78 @@
 {% extends 'base.html' %}
 
+
 {% block contenido %}
-<div class="container mt-5">
-    <div class="jumbotron text-center">
-        <h1>¡Bienvenido a Nuestro Blog!</h1>
-        <p>Descubre las últimas noticias y artículos en diversas categorías.</p>
-    </div>
-
-    <div class="row">
-        <div class="col-md-8">
-            <h2>Últimos Posts</h2>
-            <ul>
-                {% for post in posts %}
-                    <li>
-                        <a href="{% url 'apps.posts:post_individual' post.id %}">
-                            {{ post.titulo }}
-                        </a> 
-                        - Publicado el {{ post.fecha_publicacion|date:"d M, Y" }}
-                    </li>
-                {% empty %}
-                    <li>No hay posts disponibles.</li>
-                {% endfor %}
-            </ul>
-        </div>
-
-        <div class="col-md-4">
-            <h2>Categorías</h2>
-            <ul>
-                {% for categoria in categorias %}
-                    <li>
-                        <a href="{% url 'apps.posts:posts_por_categoria' categoria.id %}">
-                            {{ categoria.nombre }}
-                        </a>
-                    </li>
-                {% empty %}
-                    <li>No hay categorías disponibles.</li>
-                {% endfor %}
-            </ul>
+<html>
+<body>
+    <div class="container-cover">
+        <div class="container">
+            <h1>Bienvenido a mi blog</h1>
+            <p>Descubre las últimas noticias y artículos en diversas categorías.</p>
         </div>
     </div>
-</div>
+        
+    <div class="container-content">
+        <article>
+
+            <h1>NOTICIAS DE HOY: El Gobierno logró un superávit fiscal de $466.631</h1>
+
+            <p>El Sector Público Nacional (SPN) registró en septiembre un resultado primario de $816.447 millones y un superávit financiero de $466.631 millones, 
+            con lo cual completó así nueve meses de resultados favorables, algo que, en el acumulado anual, no ocurría desde 2010. 
+            Así lo informó el Ministerio de Economía, que indicó que "el superávit financiero alcanzado el mes pasado contrasta con el déficit registrado en septiembre de 2023, 
+            que a precios actuales fue equivalente a casi $1,6 billones".</p>
+
+                <h1>El Gobierno logró un superávit fiscal de $466.631</h1>
+
+                <p>El Sector Público Nacional (SPN) registró en septiembre un resultado primario de $816.447 millones y un superávit financiero de $466.631 millones, 
+                con lo cual completó así nueve meses de resultados favorables, algo que, en el acumulado anual, no ocurría desde 2010. 
+                Así lo informó el Ministerio de Economía, que indicó que "el superávit financiero alcanzado el mes pasado contrasta con el déficit registrado en septiembre de 2023, 
+                que a precios actuales fue equivalente a casi $1,6 billones".</p>
+
+                <img src="static/img/superfiscal.jpg" alt="">
+
+                <p>El Sector Público Nacional (SPN) registró en septiembre un resultado primario de $816.447 millones y un superávit financiero de $466.631 millones, 
+                con lo cual completó así nueve meses de resultados favorables, algo que, en el acumulado anual, no ocurría desde 2010. 
+                Así lo informó el Ministerio de Economía, que indicó que "el superávit financiero alcanzado el mes pasado contrasta con el déficit registrado en septiembre de 2023, 
+                que a precios actuales fue equivalente a casi $1,6 billones".</p>
+            
+                <p>El Sector Público Nacional (SPN) registró en septiembre un resultado primario de $816.447 millones y un superávit financiero de $466.631 millones, 
+                con lo cual completó así nueve meses de resultados favorables, algo que, en el acumulado anual, no ocurría desde 2010. 
+                Así lo informó el Ministerio de Economía, que indicó que "el superávit financiero alcanzado el mes pasado contrasta con el déficit registrado en septiembre de 2023, 
+                que a precios actuales fue equivalente a casi $1,6 billones".</p>
+
+        </article>
+
+        <div class="container-aside">
+
+            <aside>
+                <img src="static/img/invertir.webp" alt="">
+                <h2>Si vas a pedir un crédito, hacelo ahora.</h2>
+                <p>Advierten que la tasa de interés irá para arriba y "culpan" a la inflación. Los préstamos en pesos siguen creciendo con fuerza. 
+                La baja de tasas de interés y la expectativa de mayor estabilidad financiera, 
+                entre otros factores, impulsan la demanda de préstamos en moneda local.</p>
+                <a href="#"><button>Leer más >></button></a>
+            </aside>
+
+            <aside>
+                <img src="static/img/Wall Street.webp" alt="">
+                <h2>Acciones argentinas en Wall Street y bonos.</h2>
+                <p>Pese a un buen comienzo, la bolsa porteña perdió un 2,2% y cortó las subas de cinco ruedas consecutivas, producto de una toma de ganancias.
+                En la plaza externa, las acciones de empresas argentinas que se negocian en el exterior dejaron mayoría resultados en rojo en sus cotizaciones de hasta 6,3%, 
+                en una jornada de buen clima negocios en Wall Street.</p>
+            </aside>
+
+            <aside>
+                <img src="static/img/blanqueo.webp" alt="">
+                <h2>Se frenó el blanqueo y se encendieron las alarmas.</h2>
+                <p>El dólar blue se vende este miércoles con una baja de 15 pesos, a $1.220 en las cuevas del microcentro porteño. En el segmento bursátil, 
+                el dólar contado con liquidación se negoció a $1.190; mientras que el dólar MEP operó en $1.160. </p>
+                <a href="#"><button>Leer más >></button></a>
+            </aside>
+
+        </div>
+
+
+    </div>
+</body>
+</html>
 {% endblock %}
